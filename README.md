@@ -125,9 +125,11 @@ with DAG(dag_id="example_dag_with_secrets") as dag:
 
 ## Improvement Suggestions
 
+- Nicer user experience for defining args and commands
+- Add ability for user to specify "create if not exists" and "destroy on exit" so lifecycle can be contained in one operator 
 - Use approach from other GCP operators once this issue is resolved https://github.com/googleapis/python-run/issues/64
 - Add operators for all CRUD operations
-- Add run sensor (ref: [link](https://github.com/apache/airflow/tree/main/airflow/providers/google/cloud/sensors))
+- Add run sensor (see [link](https://github.com/apache/airflow/tree/main/airflow/providers/google/cloud/sensors))
 - Enable volume mounts (see [TaskSpec](https://cloud.google.com/run/docs/reference/rest/v1/TaskSpec))
 - Allow user to configure resource requirements `requests` (see [ResourceRequirements](https://cloud.google.com/run/docs/reference/rest/v1/Container#resourcerequirements))
 - Add remaining container options (see [Container](https://cloud.google.com/run/docs/reference/rest/v1/Container))
