@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "airflow-google-cloud-run-plugin"
+version = "0.1.0"
+license = "MIT"
+repository = "https://github.com/mharrisb1/airflow-google-cloud-run-plugin"
+homepage = "https://github.com/mharrisb1/airflow-google-cloud-run-plugin"
+documentation = "https://github.com/mharrisb1/airflow-google-cloud-run-plugin"
+description = "Airflow plugin for Google Cloud Run Jobs"
+authors = ["Michael Harris <mharris@luabase.com>"]
+readme = "README.md"
+packages = [
+    { include = "airflow_google_cloud_run_plugin" }
+]
+
+[tool.poetry.dependencies]
+python = ">=3.8,<3.11"
+apache-airflow = "^2.4.2"
+google-auth = "^2.13.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.1.3"
+black = "^22.10.0"
+tox = "^3.26.0"
+five18 = "^0.1.0"
+jupyter = "^1.0.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
