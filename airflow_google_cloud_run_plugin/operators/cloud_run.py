@@ -108,7 +108,7 @@ class CloudRunJobRunOperator(BaseOperator):
         wait_for_execution: bool = True,
         **kwargs
     ) -> None:
-        super().__init__(task_id, **kwargs)
+        super().__init__(task_id=task_id, **kwargs)
         self.project_id = project_id
         self.location = location
         self.name = name
