@@ -1,5 +1,10 @@
 # airflow-google-cloud-run-plugin
 
+[![PyPI version](https://badge.fury.io/py/airflow-google-cloud-run-plugin.svg)](https://badge.fury.io/py/airflow-google-cloud-run-plugin)
+[![PyPI - Downloads](https://img.shields.io/pypi/dm/airflow-google-cloud-run-plugin)](https://pypi.org/project/airflow-google-cloud-run-plugin/)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/airflow-google-cloud-run-plugin.svg)](https://pypi.org/project/airflow-google-cloud-run-plugin/)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)
+
 Airflow plugin for
 orchestrating [Google Cloud Run jobs](https://cloud.google.com/run/docs/overview/what-is-cloud-run#jobs).
 
@@ -158,3 +163,4 @@ with DAG(dag_id="example_dag") as dag:
 - Add custom links for log URIs
 - Add wrapper class for easier environment variable definition. Similar to `Secret` from Kubernetes provider (
   see [link](https://github.com/apache/airflow/blob/main/airflow/kubernetes/secret.py))
+- Add slight time padding between job create and run
