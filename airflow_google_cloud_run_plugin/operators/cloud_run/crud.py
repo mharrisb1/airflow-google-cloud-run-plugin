@@ -2,7 +2,6 @@ from typing import Any, Dict, List, Optional, Union, Sequence
 
 from airflow.utils.context import Context
 
-from airflow_google_cloud_run_plugin.cloud_run_v1.namespaces import Job
 from airflow_google_cloud_run_plugin.hooks.cloud_run import CloudRunJobHook
 from airflow_google_cloud_run_plugin.operators.cloud_run.base import (
     BaseCloudRunJobOperator,
