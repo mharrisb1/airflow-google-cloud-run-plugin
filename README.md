@@ -164,3 +164,4 @@ with DAG(dag_id="example_dag") as dag:
 - Add wrapper class for easier environment variable definition. Similar to `Secret` from Kubernetes provider (
   see [link](https://github.com/apache/airflow/blob/main/airflow/kubernetes/secret.py))
 - Add slight time padding between job create and run
+- Add ability to choose to replace the job with new config values if values have changed
