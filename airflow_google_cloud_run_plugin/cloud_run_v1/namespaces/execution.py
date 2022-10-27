@@ -59,3 +59,10 @@ class Execution(SerializationMixin):
             spec=ExecutionSpec.from_dict(d["spec"]),
             status=ExecutionStatus.from_dict(d.get("status", {})),
         )
+
+    def get_status(self) -> str:
+        try:
+            cond = next(c for c in self.status.conditions if c.type == "Completed")
+            return cond.status
+        except StopIteration:
+            return "Unknown"
