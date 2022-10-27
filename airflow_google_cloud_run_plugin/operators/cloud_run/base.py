@@ -1,4 +1,4 @@
-from typing import Any
+from typing import Any, Dict
 
 from airflow.models import BaseOperator
 from airflow.utils.context import Context
@@ -19,5 +19,5 @@ class BaseCloudRunJobOperator(BaseOperator):
         self.project_id = project_id
         self.location = location
 
-    def execute(self, context: Context) -> Any:
+    def execute(self, context: Context) -> Dict[str, Any]:
         raise NotImplementedError

@@ -58,7 +58,7 @@ class CloudRunCreateJobOperator(BaseCloudRunJobOperator):
         self.max_retries = max_retries or 0
         self.labels = labels
 
-    def execute(self, context: Context) -> Job:
+    def execute(self, context: Context) -> Dict[str, Any]:
         hook = CloudRunJobHook(project_id=self.project_id, region=self.location)
         job = hook.create_job(
             name=self.name,
@@ -74,7 +74,7 @@ class CloudRunCreateJobOperator(BaseCloudRunJobOperator):
             max_retries=self.max_retries,
             labels=self.labels,
         )
-        return job
+        return job.to_dict()
 
 
 class CloudRunDeleteJobOperator(BaseCloudRunJobOperator):

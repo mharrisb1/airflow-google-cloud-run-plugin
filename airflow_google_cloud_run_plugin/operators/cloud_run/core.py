@@ -79,7 +79,7 @@ class CloudRunJobOperator(BaseCloudRunJobOperator):
 
         return execution
 
-    def execute(self, context: Context) -> Execution:
+    def execute(self, context: Context) -> Dict[str, Any]:
         hook = CloudRunJobHook(project_id=self.project_id, region=self.location)
         if self.create_if_not_exists and not self.image:
             raise CloudRunJobExecutionError("Image must be set if creating new job.")
@@ -108,6 +108,6 @@ class CloudRunJobOperator(BaseCloudRunJobOperator):
             hook.delete_job(job.metadata.name)
 
         if execution.get_status() == "True":
-            return execution
+            return execution.to_dict()
 
         raise CloudRunJobExecutionError("Job execution did not complete successfully.")
