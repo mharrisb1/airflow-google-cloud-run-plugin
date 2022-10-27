@@ -19,7 +19,6 @@ google-auth = "^2.13.0"
 [tool.poetry.group.dev.dependencies]
 apache-airflow = ">=2.3,<2.5"
 pytest = "^7.1.3"
-black = "^22.10.0"
 tox = "^3.26.0"
 five18 = "^0.1.0"
 jupyter = "^1.0.0"
