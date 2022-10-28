@@ -154,8 +154,6 @@ with DAG(dag_id="example_dag") as dag:
 - Allow user to configure resource requirements `requests` (
   see [ResourceRequirements](https://cloud.google.com/run/docs/reference/rest/v1/Container#resourcerequirements))
 - Add remaining container options (see [Container](https://cloud.google.com/run/docs/reference/rest/v1/Container))
-- Provide a job generator helper similar to Dataproc cluster config generator (
-  see [link](https://airflow.apache.org/docs/apache-airflow-providers-google/stable/operators/cloud/dataproc.html#generating-cluster-config))
 - Allow non-default credentials and for user to specify service account (
   see [link](https://google-auth.readthedocs.io/en/latest/user-guide.html#service-account-private-key-files))
 - Allow failure threshold. If more than one task is specified, user should be allowed to specify number of failures
