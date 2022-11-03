@@ -101,6 +101,11 @@ class CloudRunJobOperator(BaseCloudRunJobOperator):
                 max_retries=self.max_retries,
                 labels=self.labels,
             )
+
+        # Even though the job exists, sometimes the run will fail with "JOB NOT FOUND ERROR".
+        # Add padding to help prevent that.
+        time.sleep(5)
+
         execution = hook.run_job(job.metadata.name)
         execution = self._wait_for_execution_completion(hook, execution)
 
