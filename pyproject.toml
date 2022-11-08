@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "airflow-google-cloud-run-plugin"
-version = "0.2.2"
+version = "0.3.0"
 license = "MIT"
 repository = "https://github.com/mharrisb1/airflow-google-cloud-run-plugin"
 homepage = "https://github.com/mharrisb1/airflow-google-cloud-run-plugin"

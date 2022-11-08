@@ -22,6 +22,7 @@ class CloudRunJobOperator(BaseCloudRunJobOperator):
         "args",
         "labels",
     )
+    template_ext: Sequence[str] = (".sql", ".json")
 
     def __init__(
         self,
