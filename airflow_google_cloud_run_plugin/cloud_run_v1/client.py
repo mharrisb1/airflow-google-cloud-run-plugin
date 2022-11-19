@@ -1,10 +1,12 @@
 from typing import List
 
-from airflow_google_cloud_run_plugin.cloud_run_v1.namespaces import Job, Execution
-
 import requests
+from requests.adapters import HTTPAdapter, Retry
+
 import google.auth
 import google.auth.transport.requests
+
+from airflow_google_cloud_run_plugin.cloud_run_v1.namespaces import Job, Execution
 
 
 class CloudRunJobClient:
@@ -18,6 +20,7 @@ class CloudRunJobClient:
         auth_req = google.auth.transport.requests.Request()
         credentials.refresh(auth_req)
         self._session = requests.Session()
+        self._session.mount("https://", HTTPAdapter(max_retries=Retry(total=5, backoff_factor=2)))
         self._session.headers.update({"Content-Type": "application/json"})
         self._session.headers.update({"Authorization": f"Bearer {credentials.token}"})
 
