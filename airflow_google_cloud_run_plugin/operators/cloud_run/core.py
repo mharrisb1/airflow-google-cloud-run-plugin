@@ -76,7 +76,8 @@ class CloudRunJobOperator(BaseCloudRunJobOperator):
             self.log.info("Checking execution status")
             self.log.info(execution.to_dict())
             status = execution.get_status()
-            time.sleep(3)
+            # Avoid too many calls error
+            time.sleep(18)
 
         return execution
 

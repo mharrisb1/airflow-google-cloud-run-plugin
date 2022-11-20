@@ -20,7 +20,9 @@ class CloudRunJobClient:
         auth_req = google.auth.transport.requests.Request()
         credentials.refresh(auth_req)
         self._session = requests.Session()
-        self._session.mount("https://", HTTPAdapter(max_retries=Retry(total=5, backoff_factor=2)))
+        self._session.mount(
+            "https://", HTTPAdapter(max_retries=Retry(total=5, backoff_factor=2))
+        )
         self._session.headers.update({"Content-Type": "application/json"})
         self._session.headers.update({"Authorization": f"Bearer {credentials.token}"})
 
