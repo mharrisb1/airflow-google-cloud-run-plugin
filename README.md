@@ -143,23 +143,3 @@ with DAG(dag_id="example_dag") as dag:
   )
 ```
 
-## Improvement Suggestions
-
-- Add support for Cloud Run services
-- Nicer user experience for defining args and commands
-- Use approach from other GCP operators once this issue is resolved https://github.com/googleapis/python-run/issues/64
-- Add operators for all CRUD operations
-- Add run sensor (see [link](https://github.com/apache/airflow/tree/main/airflow/providers/google/cloud/sensors))
-- Enable volume mounts (see [TaskSpec](https://cloud.google.com/run/docs/reference/rest/v1/TaskSpec))
-- Allow user to configure resource requirements `requests` (
-  see [ResourceRequirements](https://cloud.google.com/run/docs/reference/rest/v1/Container#resourcerequirements))
-- Add remaining container options (see [Container](https://cloud.google.com/run/docs/reference/rest/v1/Container))
-- Allow non-default credentials and for user to specify service account (
-  see [link](https://google-auth.readthedocs.io/en/latest/user-guide.html#service-account-private-key-files))
-- Allow failure threshold. If more than one task is specified, user should be allowed to specify number of failures
-  allowed
-- Add custom links for log URIs
-- Add wrapper class for easier environment variable definition. Similar to `Secret` from Kubernetes provider (
-  see [link](https://github.com/apache/airflow/blob/main/airflow/kubernetes/secret.py))
-- Add slight time padding between job create and run
-- Add ability to choose to replace the job with new config values if values have changed
